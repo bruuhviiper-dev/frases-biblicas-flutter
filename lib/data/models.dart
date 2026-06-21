@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'app_info.dart';
+
 /// Um versículo bíblico (texto + referência, ex.: "João 3:16").
 class Verse {
   const Verse(this.text, this.reference);
@@ -9,8 +11,9 @@ class Verse {
 
   String get id => '$reference::${text.hashCode}';
 
-  /// Texto pronto pra compartilhar (com a assinatura do app — tráfego orgânico).
-  String get shareText => '"$text"\n— $reference\n\n📖 Frases Bíblicas';
+  /// Texto pronto pra compartilhar (assinatura + link do app = tráfego orgânico).
+  String get shareText =>
+      '"$text"\n— $reference\n\n📖 ${AppInfo.appName}\n${AppInfo.shareFooter}';
 }
 
 /// Categoria de versículos (ex.: Fé, Esperança, Amor...).
