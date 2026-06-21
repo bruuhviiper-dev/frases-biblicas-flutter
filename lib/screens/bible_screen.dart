@@ -44,7 +44,8 @@ class BibleScreen extends StatelessWidget {
                 trailing: const Icon(Icons.chevron_right_rounded),
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (_) => BibleChaptersScreen(book: b)),
+                      builder: (_) => BibleChaptersScreen(
+                          books: books, bookIndex: bookIndex)),
                 ),
               );
             },

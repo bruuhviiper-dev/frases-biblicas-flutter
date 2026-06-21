@@ -5,13 +5,19 @@ import 'bible_reader_screen.dart';
 
 /// Grade de capítulos de um livro.
 class BibleChaptersScreen extends StatelessWidget {
-  const BibleChaptersScreen({super.key, required this.book});
+  const BibleChaptersScreen({
+    super.key,
+    required this.books,
+    required this.bookIndex,
+  });
 
-  final BibleBook book;
+  final List<BibleBook> books;
+  final int bookIndex;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final book = books[bookIndex];
     return Scaffold(
       appBar: AppBar(title: Text(book.name)),
       body: GridView.count(
@@ -28,8 +34,11 @@ class BibleChaptersScreen extends StatelessWidget {
               child: InkWell(
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) =>
-                        BibleReaderScreen(book: book, chapterIndex: ch - 1),
+                    builder: (_) => BibleReaderScreen(
+                      books: books,
+                      bookIndex: bookIndex,
+                      chapterIndex: ch - 1,
+                    ),
                   ),
                 ),
                 child: Center(

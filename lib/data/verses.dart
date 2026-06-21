@@ -79,6 +79,19 @@ class VerseData {
         Verse(
             'Alegrai-vos na esperança, sede pacientes na tribulação, perseverai na oração.',
             'Romanos 12:12'),
+        Verse(
+            'Bem-aventurado aquele que tem o Deus de Jacó por seu auxílio, cuja esperança está no Senhor seu Deus.',
+            'Salmos 146:5'),
+        Verse('Espera no Senhor, anima-te, e ele fortalecerá o teu coração.',
+            'Salmos 27:14'),
+        Verse(
+            'Porque tu és a minha esperança, Senhor Deus; tu és a minha confiança desde a minha mocidade.',
+            'Salmos 71:5'),
+        Verse(
+            'Ora, o Deus de esperança vos encha de todo o gozo e paz na vossa fé.',
+            'Romanos 15:13'),
+        Verse('Lança o teu cuidado sobre o Senhor, e ele te susterá.',
+            'Salmos 55:22'),
       ],
     ),
     VerseCategory(
@@ -97,6 +110,19 @@ class VerseData {
         Verse('Acima de tudo, tende ardente amor uns para com os outros.',
             '1 Pedro 4:8'),
         Verse('Amarás o teu próximo como a ti mesmo.', 'Mateus 22:39'),
+        Verse(
+            'Nisto conhecerão todos que sois meus discípulos: se vos amardes uns aos outros.',
+            'João 13:35'),
+        Verse('O amor tudo sofre, tudo crê, tudo espera, tudo suporta.',
+            '1 Coríntios 13:7'),
+        Verse(
+            'Agora, pois, permanecem a fé, a esperança e o amor; mas o maior destes é o amor.',
+            '1 Coríntios 13:13'),
+        Verse('Amados, amemo-nos uns aos outros, porque o amor é de Deus.',
+            '1 João 4:7'),
+        Verse(
+            'O amor não faz mal ao próximo; de sorte que o amor é o cumprimento da lei.',
+            'Romanos 13:10'),
       ],
     ),
     VerseCategory(
@@ -115,6 +141,16 @@ class VerseData {
             'Em paz também me deitarei e dormirei, porque só tu, Senhor, me fazes habitar em segurança.',
             'Salmos 4:8'),
         Verse('Aquietai-vos, e sabei que eu sou Deus.', 'Salmos 46:10'),
+        Verse(
+            'Bem-aventurados os pacificadores, porque eles serão chamados filhos de Deus.',
+            'Mateus 5:9'),
+        Verse('Tu conservarás em paz aquele cujo pensamento está firme em ti.',
+            'Isaías 26:3'),
+        Verse('Buscai a paz, e segui-a.', 'Salmos 34:14'),
+        Verse(
+            'O Senhor dará força ao seu povo; o Senhor abençoará o seu povo com paz.',
+            'Salmos 29:11'),
+        Verse('E a paz de Deus domine em vossos corações.', 'Colossenses 3:15'),
       ],
     ),
     VerseCategory(
@@ -132,6 +168,15 @@ class VerseData {
         Verse(
             'Não temas, porque eu sou contigo; não te assombres, porque eu sou o teu Deus.',
             'Isaías 41:10'),
+        Verse('O nome do Senhor é torre forte; para ela corre o justo e está seguro.',
+            'Provérbios 18:10'),
+        Verse('Em ti, Senhor, confio; nunca seja eu confundido.', 'Salmos 31:1'),
+        Verse('Tu és o meu refúgio; tu me guardas da angústia.', 'Salmos 32:7'),
+        Verse('O anjo do Senhor acampa-se ao redor dos que o temem, e os livra.',
+            'Salmos 34:7'),
+        Verse(
+            'Os olhos do Senhor estão sobre os justos, e os seus ouvidos atentos ao seu clamor.',
+            'Salmos 34:15'),
       ],
     ),
     VerseCategory(
@@ -148,6 +193,16 @@ class VerseData {
         Verse('O Senhor é a minha força e o meu escudo.', 'Salmos 28:7'),
         Verse('Mas os que esperam no Senhor renovarão as suas forças.',
             'Isaías 40:31'),
+        Verse('A alegria do Senhor é a vossa força.', 'Neemias 8:10'),
+        Verse(
+            'Ainda que a minha carne e o meu coração desfaleçam, Deus é a força do meu coração para sempre.',
+            'Salmos 73:26'),
+        Verse('Esforçai-vos, e ele fortalecerá o vosso coração, vós todos que esperais no Senhor.',
+            'Salmos 31:24'),
+        Verse('Confortai as mãos fracas, e fortalecei os joelhos vacilantes.',
+            'Isaías 35:3'),
+        Verse('Deus é a minha fortaleza e a minha força, e ele perfaz o meu caminho.',
+            '2 Samuel 22:33'),
       ],
     ),
     VerseCategory(
@@ -164,6 +219,16 @@ class VerseData {
         Verse(
             'Bendize, ó minha alma, ao Senhor, e não te esqueças de nenhum de seus benefícios.',
             'Salmos 103:2'),
+        Verse('Entrai pelas suas portas com ação de graças, e nos seus átrios com louvor.',
+            'Salmos 100:4'),
+        Verse('Louvarei ao Senhor de todo o meu coração; contarei todas as tuas maravilhas.',
+            'Salmos 9:1'),
+        Verse('Graças a Deus pelo seu dom inefável.', '2 Coríntios 9:15'),
+        Verse(
+            'Cantai ao Senhor, bendizei o seu nome; anunciai a sua salvação de dia em dia.',
+            'Salmos 96:2'),
+        Verse('E tudo quanto fizerdes, fazei-o de todo o coração, como ao Senhor.',
+            'Colossenses 3:23'),
       ],
     ),
     VerseCategory(
@@ -182,6 +247,18 @@ class VerseData {
         Verse(
             'Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei.',
             'Mateus 11:28'),
+        Verse(
+            'Olhai para as aves do céu: vosso Pai celestial as alimenta. Não valeis vós muito mais do que elas?',
+            'Mateus 6:26'),
+        Verse(
+            'Buscai primeiro o reino de Deus e a sua justiça, e todas estas coisas vos serão acrescentadas.',
+            'Mateus 6:33'),
+        Verse('Não se turbe o vosso coração; credes em Deus, crede também em mim.',
+            'João 14:1'),
+        Verse(
+            'Quando se multiplicavam as minhas preocupações, as tuas consolações me alegravam a alma.',
+            'Salmos 94:19'),
+        Verse('Não temas, crê somente.', 'Marcos 5:36'),
       ],
     ),
     VerseCategory(
