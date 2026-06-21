@@ -58,6 +58,14 @@ class VerseData {
             '1 Coríntios 16:13'),
         Verse('De sorte que a fé é pelo ouvir, e o ouvir pela palavra de Deus.',
             'Romanos 10:17'),
+        Verse('Bem-aventurados os que não viram e creram.', 'João 20:29'),
+        Verse('Assim também a fé, se não tiver as obras, é morta em si mesma.',
+            'Tiago 2:17'),
+        Verse('Justificados pela fé, temos paz com Deus por nosso Senhor Jesus Cristo.',
+            'Romanos 5:1'),
+        Verse('Mas o justo viverá da fé.', 'Romanos 1:17'),
+        Verse('Que pela fé estais guardados na virtude de Deus para a salvação.',
+            '1 Pedro 1:5'),
       ],
     ),
     VerseCategory(
@@ -281,6 +289,14 @@ class VerseData {
             'Salmos 37:4'),
         Verse('Buscai ao Senhor e a sua força; buscai a sua face continuamente.',
             'Salmos 105:4'),
+        Verse('Porque o Senhor é bom, e eterna a sua misericórdia.',
+            'Salmos 100:5'),
+        Verse('Bendize, ó minha alma, ao Senhor, e tudo o que há em mim bendiga o seu santo nome.',
+            'Salmos 103:1'),
+        Verse('Do Senhor é a terra e a sua plenitude, o mundo e aqueles que nele habitam.',
+            'Salmos 24:1'),
+        Verse('Os que semeiam em lágrimas segarão com alegria.', 'Salmos 126:5'),
+        Verse('Senhor, tu me sondaste, e me conheces.', 'Salmos 139:1'),
       ],
     ),
     VerseCategory(
@@ -297,6 +313,15 @@ class VerseData {
         Verse(
             'Ensina a criança no caminho em que deve andar, e até quando envelhecer não se desviará dele.',
             'Provérbios 22:6'),
+        Verse('Reconhece-o em todos os teus caminhos, e ele endireitará as tuas veredas.',
+            'Provérbios 3:6'),
+        Verse(
+            'Sobre tudo o que se deve guardar, guarda o teu coração, porque dele procedem as fontes da vida.',
+            'Provérbios 4:23'),
+        Verse('O temor do Senhor é o princípio do conhecimento.', 'Provérbios 1:7'),
+        Verse('A resposta branda desvia o furor.', 'Provérbios 15:1'),
+        Verse('Melhor é o pouco com justiça do que grandes rendimentos com injustiça.',
+            'Provérbios 16:8'),
       ],
     ),
     VerseCategory(
@@ -315,6 +340,10 @@ class VerseData {
         Verse(
             'Bendize, ó minha alma, ao Senhor; é ele que sara todas as tuas enfermidades.',
             'Salmos 103:2-3'),
+        Verse('Ó Senhor, meu Deus, a ti clamei, e tu me saraste.', 'Salmos 30:2'),
+        Verse('Eu sou o Senhor que te sara.', 'Êxodo 15:26'),
+        Verse('Eis que lhe trarei a ele saúde e cura, e os sararei.',
+            'Jeremias 33:6'),
       ],
     ),
     VerseCategory(
@@ -332,6 +361,15 @@ class VerseData {
             'Mateus 6:14'),
         Verse('Suportando-vos uns aos outros, e perdoando-vos uns aos outros.',
             'Colossenses 3:13'),
+        Verse(
+            'Sede uns para com os outros benignos, perdoando-vos uns aos outros, como Deus em Cristo vos perdoou.',
+            'Efésios 4:32'),
+        Verse(
+            'Ainda que os vossos pecados sejam como a escarlata, eles se tornarão brancos como a neve.',
+            'Isaías 1:18'),
+        Verse(
+            'Quanto dista o oriente do ocidente, assim afasta de nós as nossas transgressões.',
+            'Salmos 103:12'),
       ],
     ),
     VerseCategory(
@@ -345,6 +383,11 @@ class VerseData {
         Verse('Eis que os filhos são herança do Senhor.', 'Salmos 127:3'),
         Verse('Crê no Senhor Jesus Cristo e serás salvo, tu e a tua casa.',
             'Atos 16:31'),
+        Verse('A mulher virtuosa é a coroa do seu marido.', 'Provérbios 12:4'),
+        Verse('Os teus filhos serão como plantas de oliveira à roda da tua mesa.',
+            'Salmos 128:3'),
+        Verse('Quem encontra uma esposa encontra uma coisa boa e alcança o favor do Senhor.',
+            'Provérbios 18:22'),
       ],
     ),
     VerseCategory(
@@ -362,6 +405,11 @@ class VerseData {
         Verse(
             'Ensina-nos a contar os nossos dias, de tal maneira que alcancemos corações sábios.',
             'Salmos 90:12'),
+        Verse('A sabedoria é a coisa principal; adquire, pois, a sabedoria.',
+            'Provérbios 4:7'),
+        Verse('Bem-aventurado o homem que acha sabedoria.', 'Provérbios 3:13'),
+        Verse('Quão melhor é adquirir a sabedoria do que o ouro!',
+            'Provérbios 16:16'),
       ],
     ),
     VerseCategory(
@@ -379,6 +427,13 @@ class VerseData {
         Verse(
             'Ainda que eu andasse pelo vale da sombra da morte, não temeria mal algum, porque tu estás comigo.',
             'Salmos 23:4'),
+        Verse('Como alguém a quem consola sua mãe, assim eu vos consolarei.',
+            'Isaías 66:13'),
+        Verse(
+            'Bendito seja o Deus de toda a consolação, que nos consola em toda a nossa tribulação.',
+            '2 Coríntios 1:3-4'),
+        Verse('Vinde a mim os que estais cansados, e eu vos aliviarei.',
+            'Mateus 11:28'),
       ],
     ),
     VerseCategory(
@@ -394,6 +449,10 @@ class VerseData {
             'Em todas estas coisas somos mais que vencedores, por aquele que nos amou.',
             'Romanos 8:37'),
         Verse('Nenhuma arma forjada contra ti prosperará.', 'Isaías 54:17'),
+        Verse('Esta é a vitória que vence o mundo: a nossa fé.', '1 João 5:4'),
+        Verse('O Senhor pelejará por vós, e vós vos calareis.', 'Êxodo 14:14'),
+        Verse('Graças a Deus, que sempre nos faz triunfar em Cristo.',
+            '2 Coríntios 2:14'),
       ],
     ),
     VerseCategory(
