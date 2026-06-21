@@ -6,7 +6,7 @@ import '../data/models.dart';
 import '../services/app_state.dart';
 import 'share_helper.dart';
 
-/// Cartão de um versículo, com ações de favoritar, copiar e compartilhar.
+/// Cartão de uma frase, com favoritar, editar, copiar e compartilhar.
 class VerseTile extends StatelessWidget {
   const VerseTile({super.key, required this.verse});
 
@@ -26,10 +26,12 @@ class VerseTile extends StatelessWidget {
           children: [
             Text(verse.text,
                 style: GoogleFonts.lora(fontSize: 16, height: 1.5)),
-            const SizedBox(height: 8),
-            Text(verse.reference,
-                style: TextStyle(
-                    fontWeight: FontWeight.w800, color: scheme.primary)),
+            if (verse.reference.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              Text(verse.reference,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w800, color: scheme.primary)),
+            ],
             Row(
               children: [
                 IconButton(
@@ -40,13 +42,18 @@ class VerseTile extends StatelessWidget {
                       context.read<AppState>().toggleFavorite(verse.id),
                 ),
                 IconButton(
+                  tooltip: 'Editar',
+                  icon: const Icon(Icons.edit_rounded),
+                  onPressed: () => _edit(context, verse.text),
+                ),
+                IconButton(
                   tooltip: 'Copiar',
                   icon: const Icon(Icons.copy_rounded),
                   onPressed: () async {
                     await ShareHelper.copy(verse.shareText);
                     if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Versículo copiado!')),
+                        const SnackBar(content: Text('Copiado!')),
                       );
                     }
                   },
@@ -56,6 +63,70 @@ class VerseTile extends StatelessWidget {
                   tooltip: 'Compartilhar',
                   icon: const Icon(Icons.share_rounded),
                   onPressed: () => ShareHelper.share(verse.shareText),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Editar a frase antes de copiar/compartilhar (autonomia do usuário).
+  void _edit(BuildContext context, String initial) {
+    final c = TextEditingController(text: initial);
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (ctx) => Padding(
+        padding: EdgeInsets.fromLTRB(
+            16, 0, 16, MediaQuery.of(ctx).viewInsets.bottom + 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(bottom: 8),
+              child: Text('Editar frase',
+                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
+            ),
+            TextField(
+              controller: c,
+              maxLines: 5,
+              minLines: 3,
+              autofocus: true,
+              textCapitalization: TextCapitalization.sentences,
+              decoration: InputDecoration(
+                filled: true,
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: BorderSide.none),
+              ),
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton.icon(
+                    onPressed: () async {
+                      await ShareHelper.copy(c.text.trim());
+                      if (ctx.mounted) Navigator.pop(ctx);
+                    },
+                    icon: const Icon(Icons.copy_rounded),
+                    label: const Text('Copiar'),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: FilledButton.icon(
+                    onPressed: () {
+                      Navigator.pop(ctx);
+                      ShareHelper.share(c.text.trim());
+                    },
+                    icon: const Icon(Icons.share_rounded),
+                    label: const Text('Compartilhar'),
+                  ),
                 ),
               ],
             ),
