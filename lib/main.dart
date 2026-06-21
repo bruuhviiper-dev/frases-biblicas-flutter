@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'data/app_theme.dart';
 import 'screens/bible_screen.dart';
+import 'screens/create_screen.dart';
 import 'screens/favorites_screen.dart';
 import 'screens/home_screen.dart';
 import 'services/app_state.dart';
@@ -60,7 +61,12 @@ class _HomeShellState extends State<HomeShell> {
 
   @override
   Widget build(BuildContext context) {
-    const pages = [HomeScreen(), BibleScreen(), FavoritesScreen()];
+    const pages = [
+      HomeScreen(),
+      BibleScreen(),
+      CreateScreen(),
+      FavoritesScreen()
+    ];
     return Scaffold(
       body: Column(
         children: [
@@ -80,6 +86,10 @@ class _HomeShellState extends State<HomeShell> {
               icon: Icon(Icons.menu_book_outlined),
               selectedIcon: Icon(Icons.menu_book_rounded),
               label: 'Bíblia'),
+          NavigationDestination(
+              icon: Icon(Icons.add_circle_outline_rounded),
+              selectedIcon: Icon(Icons.add_circle_rounded),
+              label: 'Criar'),
           NavigationDestination(
               icon: Icon(Icons.favorite_border_rounded),
               selectedIcon: Icon(Icons.favorite_rounded),

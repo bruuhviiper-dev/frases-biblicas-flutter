@@ -68,6 +68,16 @@ class StoreScreen extends StatelessWidget {
                 onBuy: () => _buy(context, StoreProducts.removeAds.id)),
             const SizedBox(height: 18),
           ],
+          if (!state.canRemoveWatermark) ...[
+            const _SectionTitle("Editor PRO / Marca d'água"),
+            _ProductTile(
+                product: StoreProducts.removeWatermark,
+                price: PurchaseService.instance
+                    .priceOf(StoreProducts.removeWatermark.id),
+                owned: false,
+                onBuy: () => _buy(context, StoreProducts.removeWatermark.id)),
+            const SizedBox(height: 18),
+          ],
           if (!state.ownsExclusivePack) ...[
             const _SectionTitle('Conteúdo exclusivo'),
             _ProductTile(

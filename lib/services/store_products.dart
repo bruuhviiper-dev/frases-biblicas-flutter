@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/app_palettes.dart';
 
-enum ProductKind { removeAds, pack, theme, bundle, subscription }
+enum ProductKind { removeAds, watermark, pack, theme, bundle, subscription }
 
 enum PurchaseResult { success, pending, cancelled, error, unavailable }
 
@@ -37,6 +37,15 @@ class StoreProducts {
     description: 'Leia a Palavra sem interrupções. Pagamento único.',
     fallbackPrice: 'R\$ 8,90',
     emoji: '🚫',
+  );
+
+  static const removeWatermark = StoreProduct(
+    id: 'remove_watermark',
+    kind: ProductKind.watermark,
+    title: "Remover marca d'água",
+    description: 'Crie e compartilhe imagens sem a assinatura do app.',
+    fallbackPrice: 'R\$ 6,90',
+    emoji: '💧',
   );
 
   static const packExclusivas = StoreProduct(
@@ -103,6 +112,7 @@ class StoreProducts {
 
   static List<StoreProduct> get all => [
         removeAds,
+        removeWatermark,
         packExclusivas,
         premiumBundle,
         premiumMonthly,
@@ -119,6 +129,7 @@ class StoreProducts {
 
   static Color emojiTint(ProductKind kind) => switch (kind) {
         ProductKind.removeAds => const Color(0xFFEF4444),
+        ProductKind.watermark => const Color(0xFF0EA5E9),
         ProductKind.pack => const Color(0xFF9333EA),
         ProductKind.subscription => const Color(0xFFD9A406),
         ProductKind.bundle => const Color(0xFFD9A406),

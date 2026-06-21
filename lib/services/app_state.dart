@@ -18,8 +18,11 @@ class AppState extends ChangeNotifier {
   static const _kSubscriptions = 'subscriptions';
   static const _kPalette = 'palette_id';
   static const _kTempThemes = 'temp_themes_until';
+  static const _kSignature = 'custom_signature';
+  static const _kTempPro = 'temp_pro_until';
 
   static const String pRemoveAds = 'remove_ads';
+  static const String pWatermark = 'remove_watermark';
   static const String pBundle = 'premium_bundle';
   static const String pPack = 'pack_devocional';
 
@@ -29,6 +32,8 @@ class AppState extends ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
   String _paletteId = 'classico';
   DateTime? _tempThemesUntil;
+  String _customSignature = '';
+  DateTime? _tempProUntil;
 
   // ----- básico -----
   Set<String> get favorites => Set.unmodifiable(_favorites);
@@ -48,6 +53,26 @@ class AppState extends ChangeNotifier {
   /// Pode ver o app sem anúncios.
   bool get adsRemoved =>
       _entitlements.contains(pRemoveAds) || hasBundle;
+
+  /// Pode compartilhar imagens sem a marca d'água (assinatura).
+  bool get canRemoveWatermark =>
+      _entitlements.contains(pWatermark) || hasBundle;
+
+  bool get hasTemporaryPro =>
+      _tempProUntil != null && _tempProUntil!.isAfter(DateTime.now());
+  void grantTemporaryPro(Duration d) {
+    _tempProUntil = DateTime.now().add(d);
+    _prefs.setInt(_kTempPro, _tempProUntil!.millisecondsSinceEpoch);
+    notifyListeners();
+  }
+
+  String get customSignature => _customSignature;
+
+  void setCustomSignature(String value) {
+    _customSignature = value.trim();
+    _prefs.setString(_kSignature, _customSignature);
+    notifyListeners();
+  }
 
   /// Tem acesso às categorias exclusivas (pacote, bundle ou assinatura).
   bool get ownsExclusivePack => ownsProduct(pPack);
@@ -81,6 +106,9 @@ class AppState extends ChangeNotifier {
     final ttu = _prefs.getInt(_kTempThemes);
     _tempThemesUntil =
         ttu != null ? DateTime.fromMillisecondsSinceEpoch(ttu) : null;
+    _customSignature = _prefs.getString(_kSignature) ?? '';
+    final tp = _prefs.getInt(_kTempPro);
+    _tempProUntil = tp != null ? DateTime.fromMillisecondsSinceEpoch(tp) : null;
   }
 
   void toggleFavorite(String id) {
