@@ -45,7 +45,7 @@ class AppState extends ChangeNotifier {
   // ----- premium / compras -----
   bool get isSubscriber => _subscriptions.isNotEmpty;
   bool get hasBundle =>
-      _entitlements.contains(pBundle) || isSubscriber || hasTemporaryPro;
+      _entitlements.contains(pBundle) || isSubscriber;
   bool get isPremium => hasBundle;
 
   bool ownsProduct(String id) =>
@@ -57,7 +57,7 @@ class AppState extends ChangeNotifier {
 
   /// Pode compartilhar imagens sem a marca d'água (assinatura).
   bool get canRemoveWatermark =>
-      _entitlements.contains(pWatermark) || hasBundle;
+      _entitlements.contains(pWatermark) || hasBundle || hasTemporaryPro;
 
   bool get hasTemporaryPro =>
       _tempProUntil != null && _tempProUntil!.isAfter(DateTime.now());
@@ -76,7 +76,7 @@ class AppState extends ChangeNotifier {
   }
 
   /// Tem acesso às categorias exclusivas (pacote, bundle ou assinatura).
-  bool get ownsExclusivePack => ownsProduct(pPack);
+  bool get ownsExclusivePack => ownsProduct(pPack) || hasTemporaryPro;
 
   bool isCategoryLocked(bool premium) => premium && !ownsExclusivePack;
 
@@ -90,7 +90,7 @@ class AppState extends ChangeNotifier {
   bool ownsPalette(String paletteId) {
     final p = AppPalettes.byId(paletteId);
     if (!p.premium) return true;
-    if (hasTemporaryThemes || isPremium) return true;
+    if (hasTemporaryThemes || isPremium || hasTemporaryPro) return true;
     return p.productId != null && ownsProduct(p.productId!);
   }
 
