@@ -8,6 +8,7 @@ import 'screens/create_screen.dart';
 import 'screens/favorites_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/more_screen.dart';
+import 'services/ads_service.dart';
 import 'services/app_state.dart';
 import 'services/purchase_service.dart';
 import 'widgets/banner_ad.dart';
@@ -18,6 +19,8 @@ Future<void> main() async {
   final appState = AppState(prefs);
 
   // Loja: ao concluir/recuperar uma compra, libera o item.
+  AdsService.instance.init();
+
   PurchaseService.instance
     ..onEntitlement(appState.grantEntitlement)
     ..onSubscriptionGranted(appState.addSubscription)
